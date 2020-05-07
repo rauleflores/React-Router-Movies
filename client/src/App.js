@@ -8,6 +8,7 @@ import { Route } from "react-router-dom";
 const App = () => {
   const [savedList, setSavedList] = useState([]);
   const [movieList, setMovieList] = useState([]);
+  console.log("App.js", movieList);
 
   useEffect(() => {
     const getMovies = () => {
@@ -35,7 +36,11 @@ const App = () => {
         path="/"
         component={() => <MovieList movies={movieList} />}
       />
-      <Route exact path="/movies/:id" component={() => <Movie />} />
+      <Route
+        exact
+        path="/movies/:id"
+        component={() => <Movie movies={movieList} />}
+      />
     </div>
   );
 };
