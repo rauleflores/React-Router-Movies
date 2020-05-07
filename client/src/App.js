@@ -8,7 +8,7 @@ import { Route } from "react-router-dom";
 const App = () => {
   const [savedList, setSavedList] = useState([]);
   const [movieList, setMovieList] = useState([]);
-  console.log("App.js", movieList);
+  //console.log("App.js", movieList);
 
   useEffect(() => {
     const getMovies = () => {
