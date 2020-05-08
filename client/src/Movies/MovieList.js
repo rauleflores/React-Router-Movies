@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const MovieList = (props) => {
-  console.log("MovieList props", props);
+  // console.log("MovieList props", props);
+  // console.log(props.movies);
 
   return (
     <div className="movie-list">
@@ -16,7 +17,7 @@ const MovieList = (props) => {
 function MovieDetails({ movie }) {
   const { title, director, metascore, stars } = movie;
   return (
-    <Link to="/movies/0">
+    <NavLink to={`/movies/` + movie.id} activeClassName="movie-card">
       <div className="movie-card">
         <h2>{title}</h2>
         <div className="movie-director">
@@ -33,7 +34,7 @@ function MovieDetails({ movie }) {
           </div>
         ))}
       </div>
-    </Link>
+    </NavLink>
   );
 }
 
